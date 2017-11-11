@@ -1,0 +1,1 @@
+function results = testRule(h,Xtest,Ytest)  results = zeros(length(Ytest))  for i=1:length(Xtest(:,1))    if(h(Xtest(i,:))==Ytest(i))    results(i)=1    end  end
