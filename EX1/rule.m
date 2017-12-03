@@ -1,1 +1,1 @@
-function h = rule(w)  h = @(test) sign(dot(w,test))endfunction 
+function h = rule(w)  h = @(test) sign(dot(w,test)) ;endfunction 
