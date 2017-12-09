@@ -1,0 +1,1 @@
+function errorRate = errorRate(h,w,Xtest,Ytest)hWithW =h(w);mistakes = 0;  for i=1:length(Ytest)    if(ne(hWithW(Xtest(i,:)),Ytest(i)))    mistakes = mistakes+1;    end   end    errorRate = mistakes/length(Ytest);
