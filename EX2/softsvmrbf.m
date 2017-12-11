@@ -6,7 +6,7 @@ function alpha = softsvmrbf(lambda, sigma, m, d, Xtrain, Ytrain)
             G(i,j)=k(Xtrain(i,:),Xtrain(j,:));
         end
     end
-	H=[G*2*lambda+0.0000001 eye(m);zeros(m) zeros(m)];
+	H=[G*2*lambda zeros(m);zeros(m) zeros(m)];
     A=[G.*Ytrain eye(m);zeros(m) eye(m)];
     u=[zeros(1,m) ones(1,m)/m];
     v=[ones(m,1);zeros(m,1)];
