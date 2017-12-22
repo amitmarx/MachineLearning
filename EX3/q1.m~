@@ -1,0 +1,33 @@
+load('regdata.mat')
+samplesizes = 10:100;
+for size 
+
+lambdas =0:30;
+bestLambda = Inf;
+bestError = Inf;
+
+for i=1:length(lambdas)
+    lambda = lambdas(i);
+    w = ridgeQ1(lambda,X,Y);
+    results = Xtest'*(w);
+    error=quaredLoss(results,Ytest);
+    if(bestError>error)
+        bestError = error;
+        bestLambda =lambda;
+    end
+end
+
+w = ridgeQ1(bestLambda,X,Y);
+results = Xtest'*(w);
+hold on
+plot(results,'r');
+plot(Ytest,'b');
+hold off
+
+function w = ridgeQ1(lambda,X,Y)
+w = ((X*X'+lambda)^-1)*X*Y;
+end
+
+function error = quaredLoss(results,Y)
+    error = sum((results - Y).^2)/length(Y);
+end
