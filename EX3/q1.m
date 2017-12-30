@@ -21,12 +21,6 @@ hold on
 plot([10:100],bestLambdaPerSize);
 xlabel('Training Sample Size');
 ylabel('Lambda');
-% w = ridgeQ1(bestLambda,X,Y);
-% results = Xtest'*(w);
-% hold on
-% plot(results,'r');
-% plot(Ytest,'b');
-% hold off
 
 function w = ridgeQ1(lambda,X,Y)
 w = ((X*X'+lambda)^-1)*X*Y;
