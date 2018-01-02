@@ -1,0 +1,13 @@
+function draw = draw(X,C)
+groups = unique(C);
+
+cmap = jet(length(groups))
+hold on
+for i=1:length(groups)
+   indexes = C==groups(i);
+   cluster = X(indexes,:);
+   color = cmap[rand(1:length(groups))];
+   scatter(cluster(:,1),cluster(:,2),[],color,'filled');
+end
+hold off
+end

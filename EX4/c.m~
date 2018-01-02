@@ -1,0 +1,12 @@
+load("mnist_all.mat");
+all = [test0;test1;test2;test3;test4;test5;test6;test7;test8;test9];
+gen=@(group,value) ones(length(group),1)*value;
+labels = [gen(test0,0);gen(test1,1);gen(test2,2);gen(test3,3);gen(test4,4);gen(test5,5);gen(test6,6);gen(test7,7);gen(test8,8);gen(test9,9)];
+rnd = randi([1 length(labels)],1000,1);
+test=double(all(rnd,:));
+labels = labels(rnd);
+result=kmeans(test,10,100);
+table = 
+for k=1:1
+     
+end

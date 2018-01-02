@@ -2,7 +2,7 @@ function C = kmeans(X, k, t)
 maxVal = max(max(X));
 minVal = min(min(X));
 centers = randi([minVal maxVal],k,size(X,2));
-C=inf(1,length(X));
+C=zeros(length(X),1);
 
 for j=1:t
     for i=1:length(X)
@@ -19,4 +19,4 @@ for j=1:t
     end
 end
 
-end 
+end
