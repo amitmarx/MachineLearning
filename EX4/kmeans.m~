@@ -1,0 +1,8 @@
+function C = kmeans(X, k, t)
+centers = rand(1,length(k));
+C=inf(1,length(X));
+for i=1:length(X)
+    
+ 
+
+end 
